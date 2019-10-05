@@ -4,7 +4,7 @@ import albumentations
 import mmcv
 import numpy as np
 from albumentations import Compose
-from imagecorruptions import corrupt
+#from imagecorruptions import corrupt
 from numpy import random
 
 from mmdet.core.evaluation.bbox_overlaps import bbox_overlaps
@@ -643,10 +643,10 @@ class Corrupt(object):
         self.severity = severity
 
     def __call__(self, results):
-        results['img'] = corrupt(
-            results['img'].astype(np.uint8),
-            corruption_name=self.corruption,
-            severity=self.severity)
+#         results['img'] = corrupt(
+#             results['img'].astype(np.uint8),
+#             corruption_name=self.corruption,
+#             severity=self.severity)
         return results
 
     def __repr__(self):
